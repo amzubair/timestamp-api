@@ -10,7 +10,7 @@ var port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/timestamp/:datestring', function(req, res) {
+app.get('/:datestring', function(req, res) {
       var myDate;
   if(/^\d{8,}$/.test(req.params.datestring)) {
     myDate = moment(req.params.datestring, "X");
