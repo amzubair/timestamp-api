@@ -6,6 +6,8 @@ var moment = require('moment');
 // parse the user data into date
 // return unix date and natural date to user in json format
 
+var port = process.env.PORT || 8080;
+
 app.use(express.static(__dirname + '/public'));
 
 app.get('/timestamp/:datestring', function(req, res) {
@@ -35,6 +37,6 @@ app.get('/', function (req, res) {
 
 
 
-app.listen(8080, function () {
-  console.log('Example app listening on port 8080!');
+app.listen(port, function () {
+  console.log('Example app listening on port:' + port);
 });
